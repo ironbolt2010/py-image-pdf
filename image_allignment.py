@@ -12,9 +12,9 @@ pdf.add_page()
 current = os.getcwd()
 turn = 0
 if os.path.exists(f'/home/{username}/Downloads/pics_to_pdf') == False:
-	print('Fore.RED' + f'the path /home/{username}/Downloads/pics_to_pdf does not exist.Creation of the path has completed.Please put your images there and come back')
+	print(Fore.RED + f'the path /home/{username}/Downloads/pics_to_pdf does not exist.Creation of the path has completed.Please put your images there and come back')
 	os.mkdir(f'/home/{username}/Downloads/pics_to_pdf')
-	time.sleep(8)
+	time.sleep(3)
 	quit()
 os.chdir(f'/home/{username}/Downloads/pics_to_pdf')
 x = 00
@@ -40,6 +40,4 @@ ask_to_print = input('do you want to print the output file?(y/n): ')
 if ask_to_print == 'y' or ask_to_print == 'Y':
 	a = subprocess.run(f'lp image_outpt.pdf -d {printer}' , shell = True , capture_output = True , text = True)
 	print(a)
-print('Wrapping up....')
-time.sleep(5)
 quit()
